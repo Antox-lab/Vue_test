@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/Shapes@2x.png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Website Redesign</title>
+</head>
+
+<body>
+
+    <main>
+        <section class="toolBar">
+            <div class="toolLogo">
+                <img src="img/Logo@3x.svg" alt="Logo" />
+                <span>PROJECTUS</span>
+                <img src="img/Search@3x.svg" style="cursor: pointer;" alt="Search" />
+            </div>
+            <div class="toolUser">
+                <img id="userPhoto" src="#" alt="ActiveUser" />
+                <div class="toolUserName">
+                    <h1 id="userName"></h1>
+                    <h2 id="userStatus"></h2>
+                </div>
+                <a href="#" class="buttons userBut">...</a>
+            </div>
+            <div class="toolInfo">
+                <div class="toolUserInfo">
+                    <h1 id="complitedCount"></h1>
+                    <h2 id="complitedStatus">Completed Tasks</h2>
+                </div>
+                <div class="toolUserInfo">
+                    <h1 id="openCount"></h1>
+                    <h2 id="openStatus">Open Tasks</h2>
+                </div>
+            </div>
+            <div class="toolMenu">
+                <h1 id="menuCaption" onclick="setMenuContentVisible()">MENU</h1>
+                <div class="menuContent">
+                    <a href="#" class="menuLink">Home</a>
+                    <a href="#" class="menuLink">My Tasks</a>
+                    <div class="notificationConteiner">
+                        <a href="#" class="menuLink">Notification</a>
+                        <div id="notificationCount"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contentBar">
+            <header>
+                <section class="headSection">
+                    <section class="titleBannersItem">
+                        <div class="titleLogo">
+                            <img src="img/Shapes@2x.png" alt="Logo" />
+                        </div>
+                        <span>Website Redesign</span>
+                        <a href="#" class="buttons bannerBut">...</a>
+                    </section>
+                    <section id="titleBanner" class="titleBannersItem">
+                        <a href="#" class="buttons buttonShare">Share</a>
+                        <a href="#" class="buttons buttonChat">
+                            <img src="img/CombinedShape@1x.svg" alt="Combined" />
+                            Chat</a>
+                    </section>
+                </section>
+                <nav>
+                    <a href="#" class="links linkPassive">Tasks</a>
+                    <a href="#" class="links linkPassive">Kanban</a>
+                    <a href="#" class="links linkActive">Activity</a>
+                    <a href="#" class="links linkPassive">Calendar</a>
+                    <a href="#" class="links linkPassive">Files</a>
+                </nav>
+            </header>
+            <section class="content">
+                <h1 class="todayCaption">TODAY</h1>
+                <div class="messageSection">
+                    <img class="messageIcon" src="img/check.png" alt="Check" />
+                    <p class="messageText">Darika Samak mark as done Listing on Product Hunt so that we can reach as
+                        many potential users
+                    </p>
+                    <span class="messageTime">8:40 PM</span>
+                </div>
+                <div>
+                    <div class="messageSection">
+                        <img class="messageIcon" src="img/message.png" alt="Check" />
+                        <p class="messageText">Emilee Simchenko commented on Account for teams and personal in bottom
+                            style
+                        </p>
+                        <span class="messageTime">7:32 PM</span>
+                    </div>
+                    <div class="messageOutpost">
+                        During a project build, it is necessary to evaluate the product design and development against
+                        project requirements and
+                        outcomes
+                    </div>
+                </div>
+
+                <div class="messageSection">
+                    <img class="messageIcon" src="img/resend.png" alt="Check" />
+                    <p class="messageText">Darika Samak uploaded 4 files on An option to search in current projects or
+                        in all projects
+                    </p>
+                    <span class="messageTime">6:02 PM</span>
+                </div>
+                <div class="messageOutpostImages">
+
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>
