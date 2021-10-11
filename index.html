@@ -17,23 +17,23 @@
             <div class="toolLogo">
                 <img src="img/Logo@3x.svg" alt="Logo" />
                 <span>PROJECTUS</span>
-                <img src="img/Search@3x.svg" style="cursor: pointer;" alt="Search" />
+                <button class="searchBtn"><img src="img/Search@3x.svg" alt="Search" /></button>
             </div>
             <div class="toolUser">
                 <img id="userPhoto" src="#" alt="ActiveUser" />
                 <div class="toolUserName">
-                    <h1 id="userName"></h1>
-                    <h2 id="userStatus"></h2>
+                    <h1 id="userName">Jane</h1>
+                    <h2 id="userStatus">Owner</h2>
                 </div>
-                <a href="#" class="buttons userBut">...</a>
+                <button class="buttons userBut">···</button>
             </div>
             <div class="toolInfo">
                 <div class="toolUserInfo">
-                    <h1 id="complitedCount"></h1>
+                    <h1 id="complitedCount">372</h1>
                     <h2 id="complitedStatus">Completed Tasks</h2>
                 </div>
                 <div class="toolUserInfo">
-                    <h1 id="openCount"></h1>
+                    <h1 id="openCount">11</h1>
                     <h2 id="openStatus">Open Tasks</h2>
                 </div>
             </div>
@@ -44,28 +44,28 @@
                     <a href="#" class="menuLink">My Tasks</a>
                     <div class="notificationConteiner">
                         <a href="#" class="menuLink">Notification</a>
-                        <div id="notificationCount"></div>
+                        <div id="notificationCount">3</div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contentBar">
+        <div class="contentBar">
             <header>
-                <section class="headSection">
-                    <section class="titleBannersItem">
+                <div class="headSection">
+                    <div class="titleBannersItem">
                         <div class="titleLogo">
                             <img src="img/Shapes@2x.png" alt="Logo" />
                         </div>
                         <span>Website Redesign</span>
-                        <a href="#" class="buttons bannerBut">...</a>
-                    </section>
-                    <section id="titleBanner" class="titleBannersItem">
-                        <a href="#" class="buttons buttonShare">Share</a>
-                        <a href="#" class="buttons buttonChat">
+                        <button class="buttons bannerBut">···</button>
+                    </div>
+                    <div id="titleBanner" class="titleBannersItem">
+                        <button class="buttons buttonShare">Share</button>
+                        <button class="buttons buttonChat">
                             <img src="img/CombinedShape@1x.svg" alt="Combined" />
-                            Chat</a>
-                    </section>
-                </section>
+                            Chat</button>
+                    </div>
+                </div>
                 <nav>
                     <a href="#" class="links linkPassive">Tasks</a>
                     <a href="#" class="links linkPassive">Kanban</a>
@@ -109,7 +109,7 @@
 
                 </div>
             </section>
-        </section>
+        </div>
     </main>
     <script src="js/main.js"></script>
 </body>

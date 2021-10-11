@@ -52,19 +52,20 @@ nav {
 }
 /* Classes */
 .buttons {
-  text-decoration: none;
   font-weight: bold;
   border-radius: 1.5rem;
   text-align: center;
   transition: $interval;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .bannerBut {
   background: $ea;
   color: $d8;
-  font-size: 3rem;
+  font-size: 2rem;
   @include WH(3rem, 3rem);
-  line-height: 1.5rem;
   margin-left: 1.1rem;
   &:hover {
     background-color: $d8;
@@ -207,6 +208,15 @@ nav {
   padding-right: 1rem;
 }
 
+.searchBtn {
+  cursor: pointer;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: none;
+  padding: 0;
+  background-color: $black;
+}
+
 .titleLogo {
   background-color: orange;
   height: 4rem;
@@ -290,9 +300,9 @@ nav {
 
 .userBut {
   color: $d8;
-  font-size: 3rem;
+  font-size: 2.4rem;
   @include WH(3rem, 3rem);
-  line-height: 1.7rem;
+  background-color: $black;
   &:hover {
     color: $white;
   }
