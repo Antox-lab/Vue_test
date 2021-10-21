@@ -39,26 +39,89 @@ const activeUser = {
     "notifications": 3
 };
 
+let complitedCount = document.getElementById('complitedCount');
+let openCount = document.getElementById('openCount');
+let notificationCount = document.getElementById('notificationCount');
 const linksList = document.querySelectorAll('.links');
 
 //Loads active user info
 document.getElementById('userPhoto').src = activeUser.photo;
 document.getElementById('userName').textContent = activeUser.name;
 document.getElementById('userStatus').textContent = activeUser.status;
-document.getElementById('complitedCount').textContent = activeUser.complited;
-document.getElementById('openCount').textContent = activeUser.open;
-document.getElementById('notificationCount').textContent = activeUser.notifications;
+complitedCount.textContent = activeUser.complited;
+openCount.textContent = activeUser.open;
+notificationCount.textContent = activeUser.notifications;
 
 //Events
 linksList.forEach(function (item) {
     item.addEventListener('click', setActileLink); //for links
 });
 
-//Adds users icons
-setImages(usersList, 'usersIcon', document.getElementById('titleBanner'), false, true);
+complitedCount.addEventListener('click', setTasks); //for complited count click
 
-//Adds messages image
-setImages(messageImagesList, 'outpostImages', document.querySelector('.messageOutpostImages'), true, false);
+//Adds users icons
+setImages(usersList, ['usersIcon'], document.getElementById('titleBanner'), false, true, false);
+
+// ========================================================
+//                        Lesson 2
+// 1.
+// Checks open tasks.
+//      openCount        - declared on row 43
+function setTasks() {
+    Number(openCount.textContent) > 0 ?
+        isAboveZero() :
+        alert('Sorry, there are no open tasks!');
+}
+
+// Modifies tasks data
+//      openCount        - declared on row 43
+//      complitedCount   - declared on row 42
+function isAboveZero() {
+    if (confirm('Are you sure you want to change the number of tasks?')) {
+        Number(complitedCount.textContent++);
+        openCount.textContent -= 1;
+    }
+}
+
+// 2.
+// Adds messages image
+//      messageImagesList   - declared on row 15
+//      setImages()         - on row 99
+setImages(messageImagesList, ['outpostImages', 'pointerCursor'], document.querySelector('.messageOutpostImages'), true, false, true);
+
+// Adds images in content
+//      element          - array of images data
+//      className        - class of images
+//      parent           - parent for insert
+//      firstInsert      - true: insert in start, else - in end
+//      hint             - true: show hint of elemnt
+//      getIndex         - true: get index of element in array
+function setImages(element, className, parent, firstInsert, hint, getIndex) {
+    element.forEach(function (item, key) {
+        let addImage = document.createElement('img');
+        addImage.src = item.photo;
+        addImage.alt = item.name;
+        className.forEach(function (item) {
+            addImage.classList.add(item);
+        })
+        // For lesson 2.2
+        // Add click event for images
+        if (getIndex) {
+            addImage.addEventListener('click', function () {
+                notificationCount.textContent = key;
+            })
+        }
+        if (hint) {
+            addImage.title = item.name;
+        }
+        if (firstInsert) {
+            parent.appendChild(addImage);
+        } else {
+            parent.insertBefore(addImage, parent.firstElementChild);
+        }
+    });
+}
+//========================================================
 
 function setActileLink(event) {
     linksList.forEach(function (item) {
@@ -71,22 +134,4 @@ function setActileLink(event) {
 
 function setMenuContentVisible() {
     document.querySelector('.menuContent').classList.toggle('visibled')
-}
-
-//Adds images in content
-function setImages(element, className, parent, firstInsert, hint) {
-    element.forEach(function (item) {
-        let addImage = document.createElement('img');
-        addImage.src = item.photo;
-        addImage.alt = item.name;
-        addImage.classList.add(className);
-        if (hint) {
-            addImage.title = item.name;
-        }
-        if (firstInsert) {
-            parent.appendChild(addImage);
-        } else {
-            parent.insertBefore(addImage, parent.firstElementChild);
-        }
-    });
 }
