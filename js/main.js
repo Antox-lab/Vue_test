@@ -91,7 +91,7 @@ setImages(messageImagesList, ['outpostImages', 'pointerCursor'], document.queryS
 
 // Adds images in content
 //      element          - array of images data
-//      className        - class of images
+//      className        - array of images classes
 //      parent           - parent for insert
 //      firstInsert      - true: insert in start, else - in end
 //      hint             - true: show hint of elemnt
